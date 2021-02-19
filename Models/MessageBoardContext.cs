@@ -8,5 +8,7 @@ namespace MessageBoard.Data
         public MessageBoardContext (DbContextOptions<MessageBoardContext> options)
         : base(options) {}
         public DbSet<User> User { get; set; }
+        public DbSet<Message> Messages { get; set; }
+        public DbSet<Comment> Comments { get; set; }
     }
 }

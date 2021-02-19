@@ -49,7 +49,7 @@ namespace MessageBoard.Controllers
                 user.Register.Password = Hasher.HashPassword(user.Register, user.Register.Password);
                 _context.User.Add(user.Register);
                 _context.SaveChanges();
-                HttpContext.Session.SetInt32("UserId", user.Register.Id);
+                HttpContext.Session.SetInt32("UserId", user.Register.UserId);
                 return RedirectToAction("Success");
             }
             else
@@ -76,7 +76,7 @@ namespace MessageBoard.Controllers
                     ModelState.AddModelError("Login.Email", "Invalid email/password.");
                     return View("Registration");
                 }
-                HttpContext.Session.SetInt32("UserId", userInDb.Id);
+                HttpContext.Session.SetInt32("UserId", userInDb.UserId);
                 return RedirectToAction("Success");
             }
             else 
@@ -102,13 +102,13 @@ namespace MessageBoard.Controllers
             {
                 return RedirectToAction("Registration");
             }
-            User VBUser = _context.User.FirstOrDefault(u => u.Id == (int)LoggedId);
+            User VBUser = _context.User.FirstOrDefault(u => u.UserId == (int)LoggedId);
             ViewBag.bananas = VBUser;
 
             MessageBoardWrapper MBWrap = new MessageBoardWrapper()
             {
                 AllUsers = _context.User.ToList(),
-                LoggedUser = _context.User.FirstOrDefault(u => u.Id == (int)LoggedId),
+                LoggedUser = _context.User.FirstOrDefault(u => u.UserId == (int)LoggedId),
             };
 
             return View("Success", MBWrap);

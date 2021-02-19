@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -7,7 +8,7 @@ namespace MessageBoard.Models
     public class User
     {
         [Key]
-        public int Id { get; set; }
+        public int UserId { get; set; }
 
         [Required(ErrorMessage = "Username is required.")]
         [MinLength(2, ErrorMessage = "Username must be at least 2 characters.")]
@@ -33,5 +34,8 @@ namespace MessageBoard.Models
         public string Confirm { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.Now;
         public DateTime UpdatedAt { get; set; } = DateTime.Now;
+
+        public List<Message> CreatedMessages { get; set; }
+        public List<Comment> CreatedComments { get; set; }
     }
 }
