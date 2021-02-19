@@ -1,0 +1,41 @@
+@{
+    ViewData["Title"] = "Success";
+}
+@model MessageBoard.Models.MessageBoardWrapper
+
+<div style="display: flex">
+    <div style="margin: auto">
+
+    <h1 class="text-success">Success! Welcome, @ViewBag.bananas.Username from ViewBag</h1>
+    <h2 class="text-info">Your email from the database is: @Model.LoggedUser.Email</h2>
+    <h3 class="text-danger">All Users from Database:</h3>
+    <table class="table">
+        <thead>
+            <th>User Id</th>
+            <th>Username</th>
+            <th>Email</th>
+        </thead>
+        <tbody>
+            @foreach (User user in Model.AllUsers)
+            {
+                <tr>
+                    <td>
+                        @user.Id
+                    </td>
+                    <td>
+                        @user.Username
+                    </td>
+                    <td>
+                        @user.Email
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>
+
+</div>
+
+
+
+

@@ -1,0 +1,54 @@
+@{
+    ViewData["Title"] = "Registration and Login";
+}
+@model LogRegWrapper
+
+<div class="row justify-content-around">
+    <div class="col-sm-5">
+        <form asp-area="" asp-action="Register" asp-controller="User" method="POST" class="border rounded p-5">
+            <h1 class="mx-5 text-center mb-5">Sign-Up</h1>
+            <div class="form-group row">
+                <label asp-for="Register.Username" class="col-form-label"></label>
+                <input asp-for="Register.Username" class="form-control mb-3">
+                <span class="text-danger" asp-validation-for="Register.Username"></span>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Register.Email" class="col-form-label"></label>
+                <input asp-for="Register.Email" class="form-control mb-3">
+                <span class="text-danger" asp-validation-for="Register.Email"></span>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Register.Password" class="col-form-label"></label>
+                <input asp-for="Register.Password" class="form-control mb-3">
+                <span class="text-danger" asp-validation-for="Register.Password"></span>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Register.Confirm" class="col-form-label"></label>
+                <input asp-for="Register.Confirm" class="form-control mb-3">
+                <span class="text-danger" asp-validation-for="Register.Confirm"></span>
+            </div>
+            <div class="form-group row">
+                <button class="btn btn-block btn-primary mt-3">Submit</button>
+            </div>
+        </form>
+    </div>
+    @* BEGIN LOGIN FORM *@
+    <div class="col-sm-5">
+        <form asp-area="" asp-action="Login" asp-controller="User" method="POST" class="border rounded p-5">
+            <h1 class="mx-5 text-center mb-5">Login</h1>
+            <div class="form-group row">
+                <label asp-for="Login.Email" class="col-form-label"></label>
+                <input asp-for="Login.Email" class="form-control mb-3">
+                <span class="text-danger" asp-validation-for="Login.Email"></span>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Login.Password" class="col-form-label"></label>
+                <input asp-for="Login.Password" class="form-control mb-3">
+                <span class="text-danger" asp-validation-for="Login.Password"></span>
+            </div>
+            <div class="form-group row">
+                <button class="btn btn-block btn-primary mt-3">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
