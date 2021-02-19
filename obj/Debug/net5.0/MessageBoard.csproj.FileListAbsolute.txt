@@ -165,3 +165,4 @@
 /Users/andrew/Wyzant/Mike_D/MessageBoard/obj/Debug/net5.0/Razor/Views/Home/Index.cshtml.g.cs
 /Users/andrew/Wyzant/Mike_D/MessageBoard/obj/Debug/net5.0/Razor/Views/User/Registration.cshtml.g.cs
 /Users/andrew/Wyzant/Mike_D/MessageBoard/obj/Debug/net5.0/Razor/Views/User/Success.cshtml.g.cs
+/Users/andrew/Wyzant/Mike_D/MessageBoard/obj/Debug/net5.0/Razor/Views/User/Dashboard.cshtml.g.cs

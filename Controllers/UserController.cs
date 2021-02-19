@@ -114,5 +114,38 @@ namespace MessageBoard.Controllers
             return View("Success", MBWrap);
         }
 
+        [HttpGet]
+        public IActionResult Dashboard()
+        {
+            int? LoggedId = HttpContext.Session.GetInt32("UserId");
+            if(LoggedId == null)
+            {
+                return RedirectToAction("Registration");
+            }
+
+            MessageBoardWrapper MBWrap = new MessageBoardWrapper()
+            {
+                AllMessages = _context.Messages.ToList(),
+                LoggedUser = _context.User.FirstOrDefault(u => u.UserId == (int)LoggedId),
+            };
+            return View("Dashboard", MBWrap);
+        }
+
+        [HttpPost]
+        // lowercase "message" as parameter indicates the message obj from the form
+        public IActionResult CreateMessage(MessageBoardWrapper message)
+        {
+            int? LoggedId = HttpContext.Session.GetInt32("UserId");
+            if(LoggedId == null)
+            {
+                return RedirectToAction("Registration");
+            }
+            User LoggedUser = _context.User.FirstOrDefault(u => u.UserId == (int)LoggedId);
+            message.Msg.Creator = LoggedUser;
+            _context.Messages.Add(message.Msg);
+            _context.SaveChanges();
+            return RedirectToAction("Dashboard");
+        }
+
     }
 }

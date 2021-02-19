@@ -15618,6 +15618,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/andrew/Wyzant/Mike_D/MessageBoard/Views/User/Dashboard.cshtml",
+      "TargetPath": "Views\\User\\Dashboard.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/andrew/Wyzant/Mike_D/MessageBoard/Views/_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
