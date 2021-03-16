@@ -44,3 +44,88 @@ $(function () {
         },
     });
 });
+
+class MyFormValidator {
+    // The constructor method is a built-in js function for creating and initializing an object created with a class.
+    constructor(form, fields) {
+        this.form = form;
+        this.fields = fields;
+    }
+    initialize() {
+        this.validateOnEntry();
+        this.validateOnSubmit();
+    }
+
+    validateOnSubmit() {
+        let self = this;
+        this.form.addEventListener('submit', event => {
+            event.preventDefault();
+            self.fields.forEach(field => {
+                const input = document.querySelector(`#${field}`);
+                self.validateFields(input);
+            });
+        });
+    }
+
+    validateOnEntry() {
+        let self = this;
+        this.fields.forEach(field => {
+            const inputFromUser = document.querySelector(`#${field}`);
+
+            inputFromUser.addEventListener('input', event => {
+                self.validateFields(inputFromUser);
+            });
+        });
+    }
+
+    validateFields(field) {
+        // Check for the presence of values
+        if (field.value.trim() === '') {
+            this.setStatus(
+                field,
+                `${field.previousElementSibling.innerText} cannot be blank`,
+                'error'
+            );
+        } else {
+            this.setStatus(field, null, 'success');
+        }
+
+        // Check for a valid email address
+        if (field.type === 'email') {
+            const re = /\S+@\S+\.\S+/;
+            if (re.test(field.value)) {
+                this.setStatus(field, null, 'success');
+            } else {
+                this.setStatus(
+                    field,
+                    'Please enter a valid email address',
+                    'error'
+                );
+            }
+        }
+    }
+
+    setStatus(field, message, status) {
+        const errorMessage = field.parentElement.querySelector(
+            '.error-message'
+        );
+
+        if (status === 'success') {
+            if (errorMessage) {
+                errorMessage.innerText = '';
+            }
+        }
+
+        if (status === 'error') {
+            field.parentElement.querySelector(
+                '.error-message'
+            ).innerText = message;
+        }
+    }
+}
+
+const form = document.querySelector('#login');
+const fields = ['Login_Email', 'Login_Password'];
+
+const myValidator = new MyFormValidator(form, fields);
+myValidator.initialize();
