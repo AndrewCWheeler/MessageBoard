@@ -15603,6 +15603,11 @@
   "RootNamespace": "MessageBoard",
   "Documents": [
     {
+      "FilePath": "/Users/andrew/Wyzant/Mike_D/MessageBoard/Views/Shared/_RegisterLayout.cshtml",
+      "TargetPath": "Views\\Shared\\_RegisterLayout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/andrew/Wyzant/Mike_D/MessageBoard/Views/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
@@ -15618,11 +15623,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/andrew/Wyzant/Mike_D/MessageBoard/Views/User/Dashboard.cshtml",
-      "TargetPath": "Views\\User\\Dashboard.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "/Users/andrew/Wyzant/Mike_D/MessageBoard/Views/_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -15635,6 +15635,11 @@
     {
       "FilePath": "/Users/andrew/Wyzant/Mike_D/MessageBoard/Views/User/Registration.cshtml",
       "TargetPath": "Views\\User\\Registration.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/andrew/Wyzant/Mike_D/MessageBoard/Views/MessageBoard/Dashboard.cshtml",
+      "TargetPath": "Views\\MessageBoard\\Dashboard.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -13,6 +13,8 @@ namespace MessageBoard.Models
         public int UserId { get; set; }
         public User Creator { get; set; }
         public List<Comment> ChildrenComments { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
     }
 }

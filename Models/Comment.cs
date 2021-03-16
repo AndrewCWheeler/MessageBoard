@@ -13,6 +13,8 @@ namespace MessageBoard.Models
         public User Creator { get; set; }
         public int MessageId { get; set; }
         public Message ParentMessage { get; set; }
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
+        public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
     }
 }

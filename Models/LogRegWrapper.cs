@@ -5,5 +5,6 @@ namespace MessageBoard.Models
     {
         public User Register { get; set; }
         public LogUser Login { get; set; }
+
     }
 }
